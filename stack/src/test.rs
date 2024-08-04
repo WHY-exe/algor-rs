@@ -19,3 +19,13 @@ fn test_check_par() {
     assert_eq!(check_par("()((123456))()"), true);
     assert_eq!(check_par("(123((123456))(231)32)321)1231(1231)"), false);
 }
+
+#[test]
+fn test_check_par2() {
+    use crate::use_case::check_par;
+    assert_eq!(check_par("{()([][(123456))]()}"), true);
+    assert_eq!(
+        check_par("(123((12345[[]]6{}){)(2}31)32)32][1)1231(1231)"),
+        false
+    );
+}

@@ -20,6 +20,7 @@ impl<T> Stack<T> {
         self.top += 1;
     }
 
+    // return None when stack is empty
     pub fn pop(&mut self) -> Option<T> {
         if self.top == 0 {
             return None;
@@ -28,6 +29,7 @@ impl<T> Stack<T> {
         self.data.pop()
     }
 
+    // return None when stack is empty
     pub fn peek(&self) -> Option<&T> {
         if self.top == 0 {
             return None;
